@@ -11,6 +11,7 @@
 		1265C608274D4DD600EA1AAC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1265C607274D4DD600EA1AAC /* ContentView.swift */; };
 		1265C60A274D4DD800EA1AAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1265C609274D4DD800EA1AAC /* Assets.xcassets */; };
 		1265C60D274D4DD800EA1AAC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1265C60C274D4DD800EA1AAC /* Preview Assets.xcassets */; };
+		12FFC557274D531100F4A7C0 /* QGrid in Frameworks */ = {isa = PBXBuildFile; productRef = 12FFC556274D531100F4A7C0 /* QGrid */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12FFC557274D531100F4A7C0 /* QGrid in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +85,9 @@
 			dependencies = (
 			);
 			name = TZ1ByAristazh;
+			packageProductDependencies = (
+				12FFC556274D531100F4A7C0 /* QGrid */,
+			);
 			productName = TZ1ByAristazh;
 			productReference = 1265C602274D4DD600EA1AAC /* TZ1ByAristazh.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +116,9 @@
 				Base,
 			);
 			mainGroup = 1265C5F9274D4DD600EA1AAC;
+			packageReferences = (
+				12FFC555274D531100F4A7C0 /* XCRemoteSwiftPackageReference "QGrid" */,
+			);
 			productRefGroup = 1265C603274D4DD600EA1AAC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -341,6 +349,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		12FFC555274D531100F4A7C0 /* XCRemoteSwiftPackageReference "QGrid" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Q-Mobile/QGrid";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		12FFC556274D531100F4A7C0 /* QGrid */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 12FFC555274D531100F4A7C0 /* XCRemoteSwiftPackageReference "QGrid" */;
+			productName = QGrid;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1265C5FA274D4DD600EA1AAC /* Project object */;
 }

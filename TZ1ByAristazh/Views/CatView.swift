@@ -1,43 +1,16 @@
 //
-//  ContentView.swift
+//  CatView.swift
 //  TZ1ByAristazh
 //
-//  Created by Yaroslav Monastyrev on 23.11.2021.
+//  Created by Yaroslav Monastyrev on 27.11.2021.
 //
 
+import Foundation
 import SwiftUI
 
-
-struct CatsMainView: View {
-    
-    let cats: [Cat] = ArrayOfCats.cats
-    
-    @ObservedObject var index = Index()
-    
-    var body: some View {
-        NavigationView {
-            ScrollView {
-                VStack(spacing: 10) {
-                    ForEach(cats, id: \.id) { cat in
-                        CatView(index: index, cat: cat)
-                    }
-                }
-                .frame(maxWidth: .infinity)
-            }
-            .navigationTitle("Cats")
-        }
-    }
-    
-}
-
-class Index: ObservableObject {
-    @Published var id = -1
-}
-
-
 struct CatView: View {
-    @ObservedObject var index: Index
-    let cat: Cat
+    @ObservedObject var index: IndexViewModel
+    let cat: CatModel
     var body: some View {
         VStack(alignment: .trailing) {
             CatImageView(cat: cat, index: index)
@@ -46,11 +19,9 @@ struct CatView: View {
     }
 }
 
-
-
 struct CatImageView: View {
-    let cat: Cat
-    @ObservedObject var index: Index
+    let cat: CatModel
+    @ObservedObject var index: IndexViewModel
     var body: some View {
         Image(cat.imageUrl)
             .resizable()
@@ -70,19 +41,13 @@ struct CatImageView: View {
 }
 
 struct DetailLinkView: View {
-    let cat: Cat
-    @ObservedObject var index: Index
+    let cat: CatModel
+    @ObservedObject var index: IndexViewModel
     var body: some View {
         NavigationLink(destination: DetailCatView(cat: cat)) {
             Text("Zoom")
                 .font(.title)
                 .bold()
         }.opacity(index.id == cat.id ? 1 : 0)
-    }
-}
-
-struct CatsMainView_Previews: PreviewProvider {
-    static var previews: some View {
-        CatsMainView()
     }
 }

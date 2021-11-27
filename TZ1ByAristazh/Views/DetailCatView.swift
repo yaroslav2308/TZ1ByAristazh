@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DetailCatView: View {
-    let cat: Cat
+    let cat: CatModel
     var body: some View {
         Image(cat.imageUrl)
             .resizable()

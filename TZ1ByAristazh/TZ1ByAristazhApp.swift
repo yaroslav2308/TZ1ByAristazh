@@ -11,7 +11,7 @@ import SwiftUI
 struct TZ1ByAristazhApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CatsMainView()
         }
     }
 }
